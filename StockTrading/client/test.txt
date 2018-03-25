@@ -1,0 +1,404 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.6
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: 2014-06-26 09:51:45
+-- 服务器版本： 5.6.16
+-- PHP Version: 5.5.9
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `StockTrading`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `admin_account`
+--
+
+CREATE TABLE IF NOT EXISTS `admin_account` (
+  `agid` char(6) COLLATE utf8_estonian_ci NOT NULL,
+  `agent` varchar(6) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `agkey` varchar(15) COLLATE utf8_estonian_ci NOT NULL,
+  PRIMARY KEY (`agid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_estonian_ci;
+
+--
+-- 转存表中的数据 `admin_account`
+--
+
+INSERT INTO `admin_account` (`agid`, `agent`, `agkey`) VALUES
+('000001', '中信证券', 'aaaaaa'),
+('000002', '光大证券', 'aaaaaa'),
+('000003', '国信证券', 'aaaaaa'),
+('000004', '华泰证券', 'aaaaaa'),
+('000005', '广发证券', 'aaaaaa'),
+('000006', '海通证券', 'aaaaaa');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `admin_log`
+--
+
+CREATE TABLE IF NOT EXISTS `admin_log` (
+  `lgid` int(18) NOT NULL AUTO_INCREMENT,
+  `agid` char(6) COLLATE utf8_estonian_ci NOT NULL,
+  `content` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dates` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`lgid`),
+  KEY `AdminLogAgidIndex` (`agid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_estonian_ci AUTO_INCREMENT=55 ;
+
+--
+-- 转存表中的数据 `admin_log`
+--
+
+INSERT INTO `admin_log` (`lgid`, `agid`, `content`, `dates`) VALUES
+(3, '000001', '管理员登陆', '2014-06-16 08:12:38'),
+(4, '000001', '管理员登陆', '2014-06-16 08:12:38'),
+(5, '000001', '管理员登陆', '2014-06-16 08:13:45'),
+(6, '000001', '管理员登陆', '2014-06-16 08:13:45'),
+(7, '000001', '管理员登陆', '2014-06-16 08:17:09'),
+(8, '000001', '管理员登陆', '2014-06-16 08:17:09'),
+(9, '000001', '管理员登陆', '2014-06-16 08:18:37'),
+(10, '000001', '管理员登陆', '2014-06-16 08:18:37'),
+(11, '000001', '管理员登陆', '2014-06-16 10:31:03'),
+(12, '000001', '管理员登陆', '2014-06-16 10:31:03'),
+(13, '000001', '管理员登出', '2014-06-16 10:31:46'),
+(14, '000001', '管理员登陆', '2014-06-16 10:43:48'),
+(15, '000001', '管理员登陆', '2014-06-16 10:43:48'),
+(16, '000001', '针对账户：3批准开户<br>  理由:证件齐全，情况属实', '2014-06-16 10:44:17'),
+(17, '000001', '管理员登出', '2014-06-16 10:44:39'),
+(18, '000001', '管理员登陆', '2014-06-16 10:51:25'),
+(19, '000001', '管理员登陆', '2014-06-16 10:51:25'),
+(20, '000001', '管理员登出', '2014-06-16 10:51:47'),
+(21, '000001', '管理员登陆', '2014-06-16 10:55:40'),
+(22, '000001', '管理员登陆', '2014-06-16 10:55:40'),
+(23, '000001', '管理员登出', '2014-06-16 10:56:14'),
+(24, '000001', '管理员登陆', '2014-06-16 11:03:31'),
+(25, '000001', '管理员登陆', '2014-06-16 11:03:32'),
+(26, '000001', '管理员登出', '2014-06-16 11:03:56'),
+(27, '000001', '管理员登陆', '2014-06-16 11:04:09'),
+(28, '000001', '管理员登陆', '2014-06-16 11:04:09'),
+(29, '000001', '管理员登出', '2014-06-16 11:04:17'),
+(30, '000001', '管理员登陆', '2014-06-16 11:34:24'),
+(31, '000001', '管理员登陆', '2014-06-16 11:34:24'),
+(32, '000001', '管理员登出', '2014-06-16 11:45:06'),
+(33, '000001', '管理员登陆', '2014-06-16 11:45:57'),
+(34, '000001', '管理员登陆', '2014-06-16 11:45:57'),
+(35, '000001', '针对账户：3拒绝挂失<br>  理由:证件齐全，情况属实', '2014-06-16 11:46:10'),
+(36, '000001', '管理员登出', '2014-06-16 11:46:12'),
+(37, '000001', '管理员登陆', '2014-06-16 12:19:54'),
+(38, '000001', '管理员登陆', '2014-06-16 12:19:54'),
+(39, '000001', '管理员登出', '2014-06-16 12:25:09'),
+(40, '000001', '管理员登陆', '2014-06-23 00:53:14'),
+(41, '000001', '管理员登陆', '2014-06-23 00:53:14'),
+(42, '000001', '管理员登陆', '2014-06-23 01:21:39'),
+(43, '000001', '管理员登陆', '2014-06-23 01:21:39'),
+(44, '000001', '管理员登出', '2014-06-23 01:23:31'),
+(45, '000005', '管理员登陆', '2014-06-23 01:25:12'),
+(46, '000005', '管理员登陆', '2014-06-23 01:25:12'),
+(47, '000005', '针对账户：5批准开户<br>  理由:证件齐全，情况属实', '2014-06-23 01:25:55'),
+(48, '000005', '管理员登出', '2014-06-23 01:26:30'),
+(49, '000001', '管理员登陆', '2014-06-23 01:35:49'),
+(50, '000001', '管理员登陆', '2014-06-23 01:35:49'),
+(51, '000001', '管理员登出', '2014-06-23 01:36:15'),
+(52, '000005', '管理员登陆', '2014-06-23 01:36:21'),
+(53, '000005', '管理员登陆', '2014-06-23 01:36:22'),
+(54, '000005', '管理员登出', '2014-06-23 01:38:49');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `ci_sessions`
+--
+
+CREATE TABLE IF NOT EXISTS `ci_sessions` (
+  `session_id` varchar(40) NOT NULL DEFAULT '0',
+  `ip_address` varchar(16) NOT NULL DEFAULT '0',
+  `user_agent` varchar(50) NOT NULL,
+  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
+  `STATUS` varchar(5) DEFAULT 'no',
+  PRIMARY KEY (`session_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `currency`
+--
+
+CREATE TABLE IF NOT EXISTS `currency` (
+  `fid` int(16) NOT NULL,
+  `types` int(2) NOT NULL DEFAULT '0',
+  `amount` float(20,6) DEFAULT '0.000000',
+  `frozen` float(20,6) DEFAULT '0.000000',
+  `available` float(20,6) DEFAULT '0.000000',
+  `interest` float(20,6) DEFAULT '0.000000',
+  `product` float(20,6) DEFAULT '0.000000',
+  PRIMARY KEY (`fid`,`types`),
+  KEY `CurrencyFidIndex` (`fid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_estonian_ci;
+
+--
+-- 转存表中的数据 `currency`
+--
+
+INSERT INTO `currency` (`fid`, `types`, `amount`, `frozen`, `available`, `interest`, `product`) VALUES
+(3, 1, 99999904.000000, 0.000000, 99999904.000000, 0.000000, 0.000000);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `fund_account`
+--
+
+CREATE TABLE IF NOT EXISTS `fund_account` (
+  `fid` int(16) NOT NULL AUTO_INCREMENT,
+  `idc` varchar(18) COLLATE utf8_estonian_ci NOT NULL,
+  `sid` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `login_pin` varchar(15) COLLATE utf8_estonian_ci NOT NULL,
+  `trade_pin` char(6) COLLATE utf8_estonian_ci NOT NULL,
+  `atm_pin` char(6) COLLATE utf8_estonian_ci NOT NULL,
+  `fa_status` int(1) NOT NULL,
+  `agid` char(6) COLLATE utf8_estonian_ci NOT NULL,
+  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `related_id` int(16) DEFAULT NULL,
+  PRIMARY KEY (`fid`),
+  KEY `agid` (`agid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_estonian_ci AUTO_INCREMENT=6 ;
+
+--
+-- 转存表中的数据 `fund_account`
+--
+
+INSERT INTO `fund_account` (`fid`, `idc`, `sid`, `login_pin`, `trade_pin`, `atm_pin`, `fa_status`, `agid`, `create_date`, `related_id`) VALUES
+(1, '111222333', '111222333444555666', '123123', '123123', '123123', 1, '000001', '2014-06-16 10:30:47', NULL),
+(2, '111222333444555666', '222333444555666777', '123123', '123123', '123123', 1, '000001', '2014-06-16 10:34:12', NULL),
+(3, '111222333444555666', '222333444555666777', '123456', '123456', '123456', 0, '000001', '2014-06-16 10:48:34', NULL),
+(4, '33010000000000000X', '123456123456123456', '123456', '123456', '123456', 1, '000001', '2014-06-16 11:01:30', NULL),
+(5, '111222333', '111222333444555666', 'mmmmmm', '123456', '123456', 0, '000005', '2014-06-23 01:24:43', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `fund_info`
+--
+
+CREATE TABLE IF NOT EXISTS `fund_info` (
+  `fundinfoid` int(15) NOT NULL AUTO_INCREMENT,
+  `fid` int(16) NOT NULL,
+  `principal` float(20,6) DEFAULT '0.000000',
+  `frozen` float(20,6) DEFAULT '0.000000',
+  `available` float(20,6) DEFAULT '0.000000',
+  PRIMARY KEY (`fundinfoid`),
+  KEY `fid` (`fid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_estonian_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `fund_log`
+--
+
+CREATE TABLE IF NOT EXISTS `fund_log` (
+  `lgid` int(18) NOT NULL AUTO_INCREMENT,
+  `fid` int(16) NOT NULL,
+  `content` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `dates` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `types` int(1) DEFAULT NULL,
+  PRIMARY KEY (`lgid`),
+  KEY `FundLogFidIndex` (`fid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_estonian_ci AUTO_INCREMENT=12 ;
+
+--
+-- 转存表中的数据 `fund_log`
+--
+
+INSERT INTO `fund_log` (`lgid`, `fid`, `content`, `dates`, `types`) VALUES
+(1, 1, '请求开户', '2014-06-16 10:30:47', 1),
+(2, 2, '请求开户', '2014-06-16 10:34:12', 1),
+(3, 3, '请求开户', '2014-06-16 10:43:33', 1),
+(4, 3, '查询资金账户状态', '2014-06-16 10:45:07', 1),
+(5, 3, '存取款', '2014-06-16 10:45:30', 0),
+(6, 3, '请求挂失', '2014-06-16 10:48:34', 1),
+(7, 4, '请求开户', '2014-06-16 11:01:30', 1),
+(8, 3, '存取款', '2014-06-16 11:56:19', 0),
+(9, 5, '请求开户', '2014-06-23 01:24:43', 1),
+(10, 1, '查询资金账户状态', '2014-06-23 01:40:38', 1),
+(11, 3, '查询资金账户状态', '2014-06-23 01:41:07', 1);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `rate`
+--
+
+CREATE TABLE IF NOT EXISTS `rate` (
+  `currency` int(2) NOT NULL,
+  `interest_rate` float(13,6) DEFAULT NULL,
+  `exchange_rate` float(13,6) DEFAULT NULL,
+  PRIMARY KEY (`currency`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_estonian_ci;
+
+--
+-- 转存表中的数据 `rate`
+--
+
+INSERT INTO `rate` (`currency`, `interest_rate`, `exchange_rate`) VALUES
+(0, 0.000000, 1.000000),
+(1, 0.050000, 6.153800),
+(2, 0.020000, 0.793900),
+(3, 0.000100, 8.389200),
+(4, 0.000000, 10.479800),
+(5, 0.237500, 0.060638),
+(6, 0.050000, 5.801700),
+(7, 0.005000, 5.739400),
+(8, 0.010000, 6.979600),
+(9, 0.000000, 4.988400);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `request`
+--
+
+CREATE TABLE IF NOT EXISTS `request` (
+  `rid` int(18) NOT NULL AUTO_INCREMENT,
+  `fid` int(16) NOT NULL,
+  `types` int(1) NOT NULL,
+  `status` int(1) NOT NULL,
+  `idc` varchar(18) COLLATE utf8_estonian_ci NOT NULL,
+  `agid` char(6) COLLATE utf8_estonian_ci NOT NULL,
+  `senddates` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `dealdates` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `reason` varchar(100) COLLATE utf8_estonian_ci DEFAULT NULL,
+  PRIMARY KEY (`rid`),
+  KEY `agid` (`agid`),
+  KEY `RequestFidIndex` (`fid`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_estonian_ci AUTO_INCREMENT=7 ;
+
+--
+-- 转存表中的数据 `request`
+--
+
+INSERT INTO `request` (`rid`, `fid`, `types`, `status`, `idc`, `agid`, `senddates`, `dealdates`, `reason`) VALUES
+(1, 1, 0, 0, '111222333', '000001', '2014-06-16 10:30:47', '2014-06-16 10:30:47', NULL),
+(2, 2, 0, 0, '111222333444555666', '000001', '2014-06-16 10:34:12', '2014-06-16 10:34:12', NULL),
+(3, 3, 0, 1, '111222333444555666', '000001', '2014-06-16 10:43:33', '2014-06-16 10:44:17', NULL),
+(4, 3, 1, 1, '111222333444555666', '000001', '2014-06-16 10:48:34', '2014-06-16 11:46:10', NULL),
+(5, 4, 0, 0, '33010000000000000X', '000001', '2014-06-16 11:01:30', '2014-06-16 11:01:30', NULL),
+(6, 5, 0, 1, '111222333', '000005', '2014-06-23 01:24:43', '2014-06-23 01:25:55', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `法人证券账户`
+--
+
+CREATE TABLE IF NOT EXISTS `法人证券账户` (
+  `股票账户号码` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `法人注册登记号码` varchar(9) COLLATE utf8_unicode_ci NOT NULL,
+  `营业执照号码` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `法人身份证号码` char(18) COLLATE utf8_unicode_ci NOT NULL,
+  `法人姓名` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `法人联系电话` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `法人联系地址` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `授权执行人姓名` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `授权人身份证号码` char(18) COLLATE utf8_unicode_ci NOT NULL,
+  `授权人联系电话` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `授权人地址` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `账户状态` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`股票账户号码`),
+  UNIQUE KEY `法人身份证号码` (`法人身份证号码`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 转存表中的数据 `法人证券账户`
+--
+
+INSERT INTO `法人证券账户` (`股票账户号码`, `法人注册登记号码`, `营业执照号码`, `法人身份证号码`, `法人姓名`, `法人联系电话`, `法人联系地址`, `授权执行人姓名`, `授权人身份证号码`, `授权人联系电话`, `授权人地址`, `账户状态`) VALUES
+('111222333444555666', '111222333', 'license1', '111222333444555666', 'leg1', 'leg1tel', 'leg1addr', 'grant1', '111111111222222222', 'grant1tel', 'grant1addr', '0');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `自然人证券账户`
+--
+
+CREATE TABLE IF NOT EXISTS `自然人证券账户` (
+  `股票账户号码` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `登记日期` date NOT NULL,
+  `姓名` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `性别` char(1) COLLATE utf8_unicode_ci NOT NULL,
+  `身份证号码` char(18) COLLATE utf8_unicode_ci NOT NULL,
+  `家庭地址` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `职业` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `学历` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `工作单位` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `联系电话` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
+  `是否代办` char(1) COLLATE utf8_unicode_ci NOT NULL,
+  `代办人姓名` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `代办人身份证号码` char(18) COLLATE utf8_unicode_ci NOT NULL,
+  `账户状态` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`股票账户号码`),
+  UNIQUE KEY `身份证号码` (`身份证号码`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 转存表中的数据 `自然人证券账户`
+--
+
+INSERT INTO `自然人证券账户` (`股票账户号码`, `登记日期`, `姓名`, `性别`, `身份证号码`, `家庭地址`, `职业`, `学历`, `工作单位`, `联系电话`, `是否代办`, `代办人姓名`, `代办人身份证号码`, `账户状态`) VALUES
+('123456123456123456', '2014-06-16', 'ABC', 'F', '33010000000000000X', 'aaaa', 'aaaa', 'aaaa', 'aaaaa', 'aaaaaaaaa', '0', 'aaaa', '33010000000000000X', '0'),
+('222333444555666777', '2014-06-13', 'idc1', 'f', '111222333444555666', 'idcaddr1', 'idc1occu', 'idc1edu', 'idc1comp', 'idc1tel', '0', 'daiban1', '999888777666555444', '0');
+
+--
+-- 限制导出的表
+--
+
+--
+-- 限制表 `admin_log`
+--
+ALTER TABLE `admin_log`
+  ADD CONSTRAINT `admin_log_ibfk_1` FOREIGN KEY (`agid`) REFERENCES `admin_account` (`agid`);
+
+--
+-- 限制表 `currency`
+--
+ALTER TABLE `currency`
+  ADD CONSTRAINT `currency_ibfk_1` FOREIGN KEY (`fid`) REFERENCES `fund_account` (`fid`);
+
+--
+-- 限制表 `fund_account`
+--
+ALTER TABLE `fund_account`
+  ADD CONSTRAINT `fund_account_ibfk_1` FOREIGN KEY (`agid`) REFERENCES `admin_account` (`agid`);
+
+--
+-- 限制表 `fund_info`
+--
+ALTER TABLE `fund_info`
+  ADD CONSTRAINT `fund_info_ibfk_1` FOREIGN KEY (`fid`) REFERENCES `fund_account` (`fid`);
+
+--
+-- 限制表 `request`
+--
+ALTER TABLE `request`
+  ADD CONSTRAINT `request_ibfk_1` FOREIGN KEY (`fid`) REFERENCES `fund_account` (`fid`),
+  ADD CONSTRAINT `request_ibfk_2` FOREIGN KEY (`agid`) REFERENCES `admin_account` (`agid`);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -1,0 +1,110 @@
+//admin_index
+			.span_acsearch{
+				font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
+				font-size: 16px;
+				line-height: 1.1;
+				color: #424b51;
+				text-align: center;
+			}
+			.header_bottom{
+				background-color: #ec650d;
+				height: 10px;
+				width: 100%;
+				padding-top: 70px;
+				z-index: -50;
+				position: fixed;
+			}
+			.li_form{
+				margin-top:15px;
+				padding-left: 150px;
+			}
+			.adrow{
+				box-shadow:  0 2px 3px rgba(0,0,0,0.1);
+			}
+			.admin_bk{
+				background: url('../img/site-background.png') left top repeat;
+			}
+
+//admin_mkey
+			.mkey{
+				margin-top: 10px;
+				border-radius: 8px;
+			}
+			.mkey_span{
+				margin-top: 5px;
+				font-size: 15px;
+				width: 200px;
+			}
+			.mkey_btn{
+				margin-top: 10%;
+				width:100px;
+			}
+			.title_span{
+				margin-top:13px;
+				padding-top: 20px;
+			}
+			div#mkeygroup{
+				text-align: left;
+				margin-left: 20%;
+				margin-bottom: 10%;
+			}
+
+//new
+		.mrm{
+			margin-right:10px;
+		}
+
+		.todo{
+  			border-radius: 8px 8px 6px 6px;
+  			color: #6285a8;
+  			margin-bottom: 20px; 
+		}
+		.todo-search {
+  			background: #fcf8e3;
+  			background-size: 16px 16px;
+ 			border-radius: 6px 6px 0 0;
+  			color: #34495e;
+  			padding: 19px 25px 20px; 
+  		}
+  		.todo ul {
+    		margin: 0;
+    		list-style-type: none; 
+    	}
+    	.todo li.todo-done {
+			background: transparent ;
+			background-size: 20px 20px;
+			color: #000000;
+		}
+		.todo-icon {
+			float: left;
+			font-size: 24px;
+			padding: 11px 22px 0 0;
+		}
+		.todo-content {
+			padding-top: 1px;
+			overflow: hidden;
+		}
+		.todo li.todo-done .todo-name {
+			color: #1abc9c;
+		}
+		.todo-name {
+			color: white;
+			font-size: 17px;
+			margin: 1px 0 3px;
+		}
+
+		.pannello-affix{
+			width: 100%;
+			transition:all 0.1s ease-out;
+		}
+
+		.fund_foot{
+            text-align: center;
+            margin-top:8%;
+            padding-top: 40px;
+            margin-top: 40px;
+            color: #777;
+            text-align: center;
+            border-top: 1px solid #e5e5e5
+        }
+
